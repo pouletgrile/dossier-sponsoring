@@ -182,19 +182,23 @@
 
   /* Equipe */
   .equipe{background:var(--cream-2);}
-  .equipe-grid{display:grid; grid-template-columns:0.85fr 1.15fr; gap:52px; align-items:start;}
-  .card-noe{
-    background:var(--cream); border-radius:6px; padding:28px;
-    box-shadow:0 12px 30px rgba(22,50,74,0.1); border-left:5px solid var(--gold);
+  .duo-grid{display:grid; grid-template-columns:1fr 1fr; gap:28px;}
+  .card-member{
+    background:var(--cream); border-radius:8px; overflow:hidden;
+    box-shadow:0 12px 30px rgba(22,50,74,0.12);
   }
-  .card-noe .avatar{
-    width:64px; height:64px; border-radius:50%; background:var(--navy);
-    color:var(--gold); display:flex; align-items:center; justify-content:center;
-    font-family:'Anton',sans-serif; font-size:1.3rem; margin-bottom:16px;
+  .card-member .member-photo{
+    width:100%; aspect-ratio:4/3.4; object-fit:cover; object-position:top center;
   }
-  .card-noe h3{font-family:'Anton',sans-serif; font-size:1.3rem; color:var(--navy); letter-spacing:0.02em;}
-  .card-noe .role{color:var(--rust); font-size:0.85rem; font-weight:600; margin:4px 0 14px; text-transform:uppercase; letter-spacing:0.03em;}
-  .card-noe p{font-size:0.95rem; color:#4a5560;}
+  .card-member h3{
+    font-family:'Anton',sans-serif; font-size:1.25rem; color:var(--navy);
+    letter-spacing:0.02em; margin:20px 24px 0;
+  }
+  .card-member .role{
+    color:var(--rust); font-size:0.82rem; font-weight:600; margin:5px 24px 12px;
+    text-transform:uppercase; letter-spacing:0.03em;
+  }
+  .card-member p{font-size:0.94rem; color:#4a5560; margin:0 24px 24px;}
   .asso p{font-size:1.02rem; color:#3c4750; margin-bottom:16px;}
   .asso-badge{
     display:inline-flex; align-items:center; gap:12px; margin-top:6px;
@@ -242,17 +246,28 @@
   .contact p{color:var(--cream-2); max-width:480px; margin:16px auto 30px;}
   .btn-mail{
     display:inline-block; background:var(--gold); color:var(--navy-deep);
-    font-weight:700; padding:14px 32px; border-radius:40px; text-decoration:none;
-    font-size:0.98rem; transition:transform .2s ease, background .2s ease;
+    font-weight:700; padding:12px 26px; border-radius:40px; text-decoration:none;
+    font-size:0.92rem; transition:transform .2s ease, background .2s ease;
   }
   .btn-mail:hover{background:var(--gold-light); transform:translateY(-2px);}
+  .contact-grid{
+    display:flex; gap:28px; justify-content:center; flex-wrap:wrap; margin-top:6px;
+  }
+  .contact-card{
+    background:rgba(246,239,223,0.06); border:1px solid rgba(246,239,223,0.15);
+    border-radius:10px; padding:26px 30px; min-width:260px;
+  }
+  .contact-card b{
+    display:block; font-family:'Anton',sans-serif; letter-spacing:0.02em;
+    font-size:1.1rem; color:var(--gold-light); margin-bottom:14px;
+  }
   footer{
     background:var(--navy-deep); color:var(--cream-2); text-align:center;
     padding:22px 0 34px; font-size:0.82rem; opacity:0.7;
   }
 
   @media (max-width:820px){
-    .projet-grid, .equipe-grid, .mission-grid{grid-template-columns:1fr;}
+    .projet-grid, .duo-grid, .mission-grid{grid-template-columns:1fr;}
     .projet-photo{order:-1;}
     .aider-grid{grid-template-columns:1fr;}
     nav ul{display:none;}
@@ -279,7 +294,7 @@
     <div class="hero-text">
       <span class="hero-eyebrow">4L Trophy 2027 · Équipage étudiant EFREI</span>
       <h1>EN 4L, <span>MARCEL !</span></h1>
-      <p class="lede">Deux étudiants, une Renault 4 de plus de 40 ans et 6 000 km de bitume et de sable jusqu'au désert marocain — pour porter des fournitures scolaires aux enfants qui en ont besoin.</p>
+      <p class="lede">Noé et Baptiste, une Renault 4 de plus de 40 ans et 6 000 km de bitume et de sable jusqu'au désert marocain — pour porter des fournitures scolaires aux enfants qui en ont besoin.</p>
       <div class="stats">
         <div class="stat"><b>6 000 km</b><span>France · Espagne · Maroc</span></div>
         <div class="stat"><b>3 pays</b><span>traversés</span></div>
@@ -314,16 +329,17 @@
     <div class="section-head">
       <span class="kicker">Le trajet</span>
       <h2>Un trait tiré de Metz jusqu'au Sahara</h2>
-      <p>Notre route grimpe les Pyrénées, traverse l'Espagne d'un bout à l'autre, puis franchit le détroit de Gibraltar avant de s'enfoncer dans les pistes du désert marocain — chaque étape se rapproche un peu plus des enfants que nous allons rencontrer.</p>
+      <p>Notre route part de Bordeaux, grimpe vers Biarritz, traverse l'Espagne d'un bout à l'autre, puis franchit le détroit de Gibraltar avant de s'enfoncer dans les pistes du désert marocain — chaque étape se rapproche un peu plus des enfants que nous allons rencontrer.</p>
     </div>
     <div class="route">
-      <div class="stop"><div class="dot"></div><b>Metz</b><span>Départ 🇫🇷</span></div>
+      <div class="stop"><div class="dot"></div><b>Bordeaux</b><span>Départ 🇫🇷</span></div>
       <div class="stop"><div class="dot"></div><b>Biarritz</b><span>Frontière</span></div>
       <div class="stop"><div class="dot"></div><b>Salamanque</b><span>Espagne 🇪🇸</span></div>
       <div class="stop"><div class="dot"></div><b>Algésiras</b><span>Détroit</span></div>
       <div class="stop"><div class="dot"></div><b>Rabat</b><span>Maroc 🇲🇦</span></div>
       <div class="stop"><div class="dot"></div><b>Merzouga</b><span>Désert</span></div>
     </div>
+    <p style="text-align:center; font-size:0.78rem; color:var(--cream-2); opacity:0.6; margin-top:14px;">Tracé indicatif, basé sur l'édition 2026 du raid.</p>
     <div class="route-stats">
       <div><b>6 000+</b><span>kilomètres</span></div>
       <div><b>3</b><span>pays traversés</span></div>
@@ -339,19 +355,25 @@
       <span class="kicker">Qui sommes-nous ?</span>
       <h2>L'équipage & l'association</h2>
     </div>
-    <div class="equipe-grid">
-      <div class="card-noe">
-        <div class="avatar">NE</div>
+    <div class="duo-grid">
+      <div class="card-member">
+        <img class="member-photo" src="noe.jpg" alt="Noé Espaignet">
         <h3>Noé Espaignet</h3>
-        <div class="role">Pilote & copilote</div>
-        <p>Étudiant à l'EFREI, prêt à échanger le clavier contre un volant pendant 12 jours pour vivre le raid étudiant le plus fou d'Europe — et surtout pour donner un vrai coup de main aux enfants du désert.</p>
+        <div class="role">Pilote / copilote</div>
+        <p>Passionné de mécanique et de véhicules anciens, il rêvait de faire le 4L Trophy depuis longtemps — le voilà enfin lancé dans l'aventure.</p>
       </div>
-      <div class="asso">
-        <span class="kicker">L'association : 4L & Faons</span>
-        <p>Nous sommes soutenus par l'association <strong>4L & Faons</strong>, forte d'une solide expérience de terrain qui a déjà conduit d'autres équipages jusqu'à la ligne d'arrivée.</p>
-        <p>Cette alliance nous ouvre les portes des 6 000 étudiants de l'EFREI, faisant de notre voiture un outil de communication percutant et unique sur tout le campus — une belle occasion pour nos sponsors de gagner en visibilité auprès d'un public jeune et engagé.</p>
-        <div class="asso-badge">🚗 <span><b>4L & Faons</b> — expérience terrain, réseau EFREI</span></div>
+      <div class="card-member">
+        <img class="member-photo" src="baptiste.jpg" alt="Baptiste Rapenne">
+        <h3>Baptiste Rapenne</h3>
+        <div class="role">Pilote / copilote</div>
+        <p>Jeune pilote de la Côte d'Azur, amateur de vitesse et de 4L, avec une vraie envie de livrer des fournitures aux enfants du désert.</p>
       </div>
+    </div>
+    <div class="asso" style="margin-top:40px;">
+      <span class="kicker">L'association : 4L & Faons</span>
+      <p>Nous sommes soutenus par l'association <strong>4L & Faons</strong>, forte d'une solide expérience de terrain qui a déjà conduit d'autres équipages jusqu'à la ligne d'arrivée.</p>
+      <p>Cette alliance nous ouvre les portes des 6 000 étudiants de l'EFREI, faisant de notre voiture un outil de communication percutant et unique sur tout le campus — une belle occasion pour nos sponsors de gagner en visibilité auprès d'un public jeune et engagé.</p>
+      <div class="asso-badge">🚗 <span><b>4L & Faons</b> — expérience terrain, réseau EFREI</span></div>
     </div>
   </div>
 </section>
@@ -373,40 +395,41 @@
   <div class="wrap">
     <div class="section-head">
       <span class="kicker">Comment nous aider ?</span>
-      <h2>Un budget de 11 000 €, votre soutien fait la différence</h2>
-      <p>De l'achat de la 4L jusqu'à la ligne d'arrivée, chaque euro récolté couvre un poste précis de notre budget. L'EFREI en finance déjà une partie — le reste, c'est vous qui pouvez nous aider à le trouver.</p>
+      <h2>Un budget de 13 000 €, votre soutien fait la différence</h2>
+      <p>De l'achat de la 4L jusqu'à la ligne d'arrivée, chaque euro récolté couvre un poste précis de notre budget. L'EFREI en finance déjà 2 000 € — le reste, c'est vous qui pouvez nous aider à le trouver.</p>
+      <p style="margin-top:18px;"><a href="https://canva.link/l8osx35rwskuexo" target="_blank" rel="noopener" style="display:inline-flex; align-items:center; gap:8px; color:var(--navy); font-weight:600; text-decoration:none; border-bottom:2px solid var(--gold); padding-bottom:2px;">📄 Consulter notre dossier de sponsoring complet ↗</a></p>
     </div>
 
     <div class="budget-strip">
-      <div style="width:33.5%; background:var(--gold);"></div>
-      <div style="width:38.2%; background:var(--navy);"></div>
-      <div style="width:16.4%; background:var(--rust);"></div>
-      <div style="width:9.1%; background:#8a8f52;"></div>
-      <div style="width:2.8%; background:#5b4636;"></div>
+      <div style="width:34.6%; background:var(--navy);"></div>
+      <div style="width:28.4%; background:var(--gold);"></div>
+      <div style="width:14.7%; background:var(--rust);"></div>
+      <div style="width:12.3%; background:#8a8f52;"></div>
+      <div style="width:10%; background:#3fa06f;"></div>
     </div>
     <div class="budget-legend">
-      <span><i style="background:var(--gold);"></i>Inscription 33,5%</span>
-      <span><i style="background:var(--navy);"></i>Véhicule & préparation 38,2%</span>
-      <span><i style="background:var(--rust);"></i>Logistique 16,4%</span>
-      <span><i style="background:#8a8f52;"></i>Sécurité 9,1%</span>
-      <span><i style="background:#5b4636;"></i>Divers 2,8%</span>
+      <span><i style="background:var(--navy);"></i>Achat & sécurisation du véhicule — 4 500 €</span>
+      <span><i style="background:var(--gold);"></i>Inscription au raid — 3 690 €</span>
+      <span><i style="background:var(--rust);"></i>Carburant & péages — 1 910 €</span>
+      <span><i style="background:#8a8f52;"></i>Préparation mécanique — 1 600 €</span>
+      <span><i style="background:#3fa06f;"></i>Communication & solidaire — 1 300 €</span>
     </div>
 
     <div class="aider-grid" style="margin-top:44px;">
       <div class="aider-card">
         <span class="num">01</span>
-        <h3>Sponsoring & visibilité</h3>
-        <p>Votre logo habille notre 4L pendant tout le raid et sur nos réseaux — une vitrine mobile qui traverse trois pays et croise des milliers de regards.</p>
+        <h3>Soutien logistique & matériel</h3>
+        <p>Accompagnez-nous sur la préparation technique du véhicule, ou fournissez du matériel utile à l'expédition — fournitures scolaires ou de première nécessité.</p>
       </div>
       <div class="aider-card">
         <span class="num">02</span>
-        <h3>Don matériel</h3>
-        <p>Fournitures scolaires, pièces mécaniques, équipement de sécurité : tout coup de pouce concret nous rapproche du départ.</p>
+        <h3>Engagement financier</h3>
+        <p>Associez l'image de votre structure à notre projet : votre logo figure sur la voiture tout au long du raid, ainsi que sur nos publications et réseaux sociaux.</p>
       </div>
       <div class="aider-card">
         <span class="num">03</span>
-        <h3>Don libre</h3>
-        <p>Chaque contribution, petite ou grande, va directement dans le budget du raid et de la mission solidaire.</p>
+        <h3>Mécénat & dons libres</h3>
+        <p>Un don financier ouvre droit à une réduction d'impôt équivalente à 66 % du montant versé, conformément à la législation en vigueur.</p>
       </div>
     </div>
   </div>
@@ -417,12 +440,21 @@
     <span class="kicker" style="color:var(--gold-light);">Nous contacter</span>
     <h2>Envie de nous suivre ou de nous soutenir ?</h2>
     <p>Écrivez-nous par mail ou par téléphone — on répond toujours, promis, même depuis une piste dans l'Erg Chebbi.</p>
-    <a class="btn-mail" href="mailto:noe.espaignet@efrei.net">✉ noe.espaignet@efrei.net</a>
-    <p style="margin-top:22px; font-size:1.05rem; color:var(--cream);">📞 <a href="tel:+33651619049" style="text-decoration:none; color:var(--gold-light); font-weight:600;">06 51 61 90 49</a></p>
+    <div class="contact-grid">
+      <div class="contact-card">
+        <b>Noé Espaignet</b>
+        <a class="btn-mail" href="mailto:noe.espaignet@efrei.net">✉ noe.espaignet@efrei.net</a>
+        <p style="margin:14px 0 0; font-size:1.02rem;">📞 <a href="tel:+33651619049" style="text-decoration:none; color:var(--gold-light); font-weight:600;">06 51 61 90 49</a></p>
+      </div>
+      <div class="contact-card">
+        <b>Baptiste Rapenne</b>
+        <a class="btn-mail" href="mailto:baptiste-mohamed.rapenne@efrei.net">✉ baptiste-mohamed.rapenne@efrei.net</a>
+        <p style="margin:14px 0 0; font-size:1.02rem;">📞 <a href="tel:+33763973752" style="text-decoration:none; color:var(--gold-light); font-weight:600;">07 63 97 37 52</a></p>
+      </div>
+    </div>
+    <p style="margin-top:34px;"><a href="https://canva.link/l8osx35rwskuexo" target="_blank" rel="noopener" style="color:var(--gold-light); font-weight:600; text-decoration:underline;">📄 Télécharger le dossier de sponsoring</a></p>
   </div>
 </section>
-
-<footer>
   En 4L, Marcel ! — 4L Trophy 2027 · Équipage étudiant EFREI · en partenariat avec 4L & Faons
 </footer>
 
